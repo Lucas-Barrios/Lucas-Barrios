@@ -6,7 +6,7 @@ Applied AI · Process Redesign · Governance
 
 I work where business problems meet AI implementation: finding where AI is actually worth deploying, redesigning the workflow around it, and keeping a human accountable where it counts (EU AI Act Article 14, by design rather than as an afterthought). Founder of Kairos Consulting.
 
-Before moving into applied AI, I spent five years in B2B SaaS business development across DACH and Southern Europe. I read a business the way an operator does: sales, customer journeys, processes, and where the real constraints sit. That commercial grounding is why my work starts from the problem and the business case, not the technology.
+Before moving into applied AI, I spent five years in B2B SaaS business development across Europe. I read a business the way an operator does: sales, customer journeys, processes, and where the real constraints sit. That commercial grounding is why my work starts from the problem and the business case, not the technology.
 
 ## Selected work
 
@@ -18,7 +18,7 @@ Before moving into applied AI, I spent five years in B2B SaaS business developme
 
 ## Toolkit
 
-Python · TypeScript / Next.js · LangGraph · LangChain · LangSmith · MCP · Claude & OpenAI APIs · RAG and evaluation (ragas) · Supabase · Streamlit · Plotly Dash · Vercel
+Python · TypeScript / Next.js · LangGraph · LangChain · LangSmith · MCP · Claude & OpenAI APIs · RAG and evaluation (ragas) · Supabase · Streamlit · Plotly Dash · Vercel · n8n 
 
 ## Currently
 
