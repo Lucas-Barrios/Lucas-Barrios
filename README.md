@@ -14,7 +14,6 @@ Before moving into applied AI, I spent five years in B2B SaaS business developme
 - [**AI Content Studio**](https://github.com/Lucas-Barrios/ai-content-studio). Governed, multi-tenant AI content generation with a reproducible evaluation harness (deterministic checkers, LLM-as-judge, ragas). 8 of 8 adversarial safety traps refused.
 - [**Klar**](https://github.com/Lucas-Barrios/klar-advisory). AI-powered Germany-readiness diagnostic for LatAm students. Claude-scored across six dimensions, human-reviewed before any result reaches a student (EU AI Act Art. 14). → [Live](LIVE_URL_KLAR)
 - [**AI Adoption Opportunity**](https://github.com/Lucas-Barrios/ai-adoption-opportunity-project). Data-driven AI-adoption business case with an interactive Plotly Dash dashboard over eight public datasets.
-- [**EU AI Act Classification Lab**](https://github.com/Lucas-Barrios/eu-ai-act-classification-lab). Risk-classification exercise applying proportional controls across approve / approve-with-controls / deny outcomes under Annex III.
 
 ## Toolkit
 
