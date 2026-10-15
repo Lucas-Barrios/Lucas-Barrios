@@ -10,10 +10,10 @@ Before moving into applied AI, I spent five years in B2B SaaS business developme
 
 ## Selected work
 
-- [**AI Reinvention Benchmark**](https://github.com/Lucas-Barrios/ai-reinvention-benchmark). Evidence-based AI-maturity benchmark of eight European machinery manufacturers, scored from public disclosure against a rubric fixed before assessment. → [Live explorer](LIVE_URL_BENCHMARK)
-- [**AI Content Studio**](https://github.com/Lucas-Barrios/ai-content-studio). Governed, multi-tenant AI content generation with a reproducible evaluation harness (deterministic checkers, LLM-as-judge, ragas). 8 of 8 adversarial safety traps refused.
-- [**Klar**](https://github.com/Lucas-Barrios/klar-advisory). AI-powered Germany-readiness diagnostic for LatAm students. Claude-scored across six dimensions, human-reviewed before any result reaches a student (EU AI Act Art. 14). → [Live](LIVE_URL_KLAR)
-- [**AI Adoption Opportunity**](https://github.com/Lucas-Barrios/ai-adoption-opportunity-project). Data-driven AI-adoption business case with an interactive Plotly Dash dashboard over eight public datasets.
+- [**AI Reinvention Benchmark**](https://github.com/Lucas-Barrios/ai-reinvention-benchmark). Evidence-based AI-maturity benchmark of eight European machinery manufacturers, scored from public disclosure against a rubric fixed before assessment. → [Live explorer](https://ai-reinvention-benchmark.streamlit.app)
+- [**AI Content Studio**](https://github.com/Lucas-Barrios/ai-content-studio). Governed, multi-tenant AI content generation with a reproducible evaluation harness (deterministic checkers, LLM-as-judge, ragas). 8 of 8 adversarial safety traps refused. → [Live demo](https://lucasbarrios.co/work/ai-content-studio/demo)
+- [**Klar**](https://github.com/Lucas-Barrios/klar-advisory). AI-powered Germany-readiness diagnostic for LatAm students. Claude-scored across six dimensions, human-reviewed before any result reaches a student (EU AI Act Art. 14). → [Live](https://www.klaradvisory.de) · [Sample result](https://www.klaradvisory.de/results/demo)
+- [**AI Adoption Opportunity**](https://github.com/Lucas-Barrios/ai-adoption-opportunity-project). Data-driven AI-adoption business case with an interactive Plotly Dash dashboard over eight public datasets. → [Live dashboard](https://ai-adoption-opportunity-project.onrender.com)
 
 ## Toolkit
 
@@ -25,4 +25,4 @@ Deepening the technical side with an M.Sc. in Technology & Management at CODE Un
 
 ## Reach me
 
-[Portfolio](https://lucasbarrios.co) · [LinkedIn](https://linkedin.com/in/lucas-j-barrios) · [Kairos Consulting](KAIROS_URL)
+[Portfolio](https://lucasbarrios.co) · [LinkedIn](https://linkedin.com/in/lucas-j-barrios) · [Kairos Consulting](https://kairosconsulting.co)

@@ -1,0 +1,88 @@
+# Keeps the portfolio demos responsive for recruiters and clients.
+#
+# Render (free tier) spins a web service down after 15 minutes without
+# traffic and shares 750 free instance hours per month across the workspace.
+# Pinging both Render services around the clock would need ~1,490 hours and
+# suspend every free service for the rest of the month, so the pings only run
+# on weekdays, 06:00-18:59 UTC (08:00-20:59 Berlin in summer, 07:00-19:59 in
+# winter). That is roughly 13 h x 22 weekdays x 2 services = ~580 hours.
+# Outside that window the first visit takes about a minute to wake a service.
+#
+# Streamlit Community Cloud hibernates an app after ~12 hours without a real
+# browser visit, and plain HTTP requests do not count. A headless browser
+# opens the app every 6 hours and clicks the wake button if it is showing.
+#
+# GitHub disables scheduled workflows in a public repository after 60 days
+# without repository activity. If the demos go cold again, check the Actions
+# tab and re-enable this workflow.
+
+name: Keep demos warm
+
+on:
+  schedule:
+    - cron: "*/10 6-18 * * 1-5" # Render services
+    - cron: "23 */6 * * *" # Streamlit app
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: keep-demos-warm-${{ github.event.schedule || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    name: Ping Render services
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '*/10 6-18 * * 1-5'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Ping
+        run: |
+          set -u
+          urls=(
+            "https://ai-adoption-opportunity-project.onrender.com/"
+            "https://klar-backend-ko6m.onrender.com/health"
+          )
+          for url in "${urls[@]}"; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 150 "$url" || echo "error")
+            echo "$url -> $code"
+          done
+
+  streamlit:
+    name: Wake Streamlit app
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '23 */6 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install headless browser
+        run: |
+          pip install --quiet "playwright>=1.47,<2"
+          python -m playwright install --with-deps chromium
+      - name: Visit app
+        env:
+          APP_URL: https://ai-reinvention-benchmark.streamlit.app/
+        run: |
+          python - <<'PY'
+          import os
+          from playwright.sync_api import sync_playwright
+
+          url = os.environ["APP_URL"]
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page()
+              page.goto(url, wait_until="domcontentloaded", timeout=120_000)
+              page.wait_for_timeout(10_000)
+              wake = page.get_by_role("button", name="Yes, get this app back up")
+              if wake.count():
+                  wake.first.click()
+                  print("App was asleep: clicked wake button.")
+                  page.wait_for_timeout(90_000)
+              else:
+                  print("App was awake: stayed for a session.")
+                  page.wait_for_timeout(30_000)
+              browser.close()
+          PY
